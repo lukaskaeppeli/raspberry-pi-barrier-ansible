@@ -23,3 +23,62 @@
     apt:
       name: barrier
       state: latest
+
+  - name: Install xorg
+    apt:     
+      name: xorg
+      state: latest
+
+  - name: Install xorg dummy
+    apt: 
+      name: xserver-xorg-video-dummy
+      state: latest
+  
+  - name: Copy barrier config
+    copy:
+      src: res/barrier_config.sgc
+      dest: /etc/barrier.conf
+      owner: root
+      group: root
+      mode: 0644
+
+  - name: Copy Xorg dummy config
+    copy:
+      src: res/xorg_dummy.config
+      dest: /etc/X11/xorg.conf.d/xorg-dummy.config
+      owner: root
+      group: root
+      mode: 0644
+
+  - name: Copy Xorg service
+    copy:
+      src: res/x_dummy.service
+      dest: /etc/systemd/system/x_dummy.service
+      owner: root
+      group: root
+      mode: 0644
+
+  - name: Copy barrier service
+    copy:
+      src: res/barrier.service
+      dest: /etc/systemd/system/barrier.service
+      owner: root
+      group: root
+      mode: 0644
+
+  - name: Reload systemd
+    ansible.builtin.systemd:
+      daemon_reload: true
+   
+  - name: Enable xorg service
+    ansible.builtin.systemd:
+      name: x_dummy
+      enabled: true
+      state: started
+
+  - name: Enable barrier service
+    ansible.builtin.systemd:
+      name: barrier
+      enabled: true
+      state: started
+
