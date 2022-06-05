@@ -23,6 +23,14 @@ section: screens
 		preserveFocus = false
 		switchCorners = none 
 		switchCornerSize = 0
+	maclka:
+		halfDuplexCapsLock = false
+                halfDuplexNumLock = false
+                halfDuplexScrollLock = false
+                xtestIsXineramaUnaware = false
+                preserveFocus = false
+                switchCorners = none
+                switchCornerSize = 0
 end
 #
 section: aliases
@@ -31,10 +39,15 @@ end
 section: links
 	lukas-desktop:
 		right = lukas-latitudee7470
+		left = raspberrypi
 	lukas-latitudee7470:
 		left = lukas-desktop
+		right = raspberrypi
 	raspberrypi:
 		right = lukas-desktop
+		left = maclka
+	maclka:
+		right = raspberrypi
 end
 #
 section: options
