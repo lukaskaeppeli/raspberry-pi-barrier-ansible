@@ -1,7 +1,7 @@
 # raspberry-pi-barrier-ansible
 
 command for clients:
-barrierc -f --disable-crypto 192.168.0.162
+barrierc -f --disable-crypto "ENTER_SERVER_ADDRESS_HERE!"
 
 # Automated barrier setup on Raspberry pi
 
