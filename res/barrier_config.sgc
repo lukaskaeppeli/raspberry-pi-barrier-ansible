@@ -1,0 +1,47 @@
+section: screens
+	raspberrypi:
+		halfDuplexCapsLock = false
+                halfDuplexNumLock = false
+                halfDuplexScrollLock = false
+                xtestIsXineramaUnaware = false
+                preserveFocus = false
+                switchCorners = none
+                switchCornerSize = 0
+	lukas-desktop:
+		halfDuplexCapsLock = false
+		halfDuplexNumLock = false
+		halfDuplexScrollLock = false
+		xtestIsXineramaUnaware = false
+		preserveFocus = false
+		switchCorners = none 
+		switchCornerSize = 0
+	lukas-latitudee7470:
+		halfDuplexCapsLock = false
+		halfDuplexNumLock = false
+		halfDuplexScrollLock = false
+		xtestIsXineramaUnaware = false
+		preserveFocus = false
+		switchCorners = none 
+		switchCornerSize = 0
+end
+#
+section: aliases
+end
+#
+section: links
+	lukas-desktop:
+		right = lukas-latitudee7470
+	lukas-latitudee7470:
+		left = lukas-desktop
+	raspberrypi:
+		right = lukas-desktop
+end
+#
+section: options
+	relativeMouseMoves = false
+	screenSaverSync = true
+	win32KeepForeground = false
+	clipboardSharing = true
+	switchCorners = none 
+	switchCornerSize = 0
+end
